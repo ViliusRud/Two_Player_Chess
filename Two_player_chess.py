@@ -75,6 +75,11 @@ class Piece:
     def __str__(self):
         return f"{self.color[0]}{self.symbol}"
 
+    def setUp(self):
+        self.board = Board()
+        self.rook = Rook('white', (0, 0))  # Fixed: include position
+        self.board.grid[0][0] = self.rook
+
     def draw(self, screen):
         if self.image_key in IMAGES:
             image = IMAGES[self.image_key]
